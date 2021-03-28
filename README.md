@@ -3,7 +3,7 @@
 	</br>
 	</br>
 	</br>
-	<img alt="logo" src="dis/js_logo.png" height="30px">
+	<img alt="logo" src="dist/js_logo.png" height="30px">
 	</br>
 	</br>
 	Some javascript challenges from beginner to advanced.
