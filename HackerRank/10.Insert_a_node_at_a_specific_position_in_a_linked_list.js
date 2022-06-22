@@ -1,5 +1,3 @@
-
-
 /*
  * Complete the 'insertNodeAtPosition' function below.
  *
