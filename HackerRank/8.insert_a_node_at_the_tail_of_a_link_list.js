@@ -13,7 +13,7 @@ function insertNodeAtTail(head, data) {
         head = newNode
         return newNode
     }
-
+ 
     let current = head
     while (current.next) {
         current = current.next
