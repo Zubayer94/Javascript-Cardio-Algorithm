@@ -63,3 +63,9 @@ console.log(list.head.next.data) //returns 5
     }
     return count;
 }
+
+// This method empties out the list.
+
+    LinkedList.prototype.clear = () => {
+        this.head = null;
+    }
