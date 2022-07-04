@@ -52,3 +52,14 @@ let list = new LinkedList(node1)
 // Let's try to access the nodes in the list we just created.
 
 console.log(list.head.next.data) //returns 5
+
+// This method returns the number of nodes present in the linked list.
+    LinkedList.prototype.size = () => {
+    let count = 0;
+    let node = this.head;
+    while (node) {
+        count++;
+        node = node.next
+    }
+    return count;
+}
