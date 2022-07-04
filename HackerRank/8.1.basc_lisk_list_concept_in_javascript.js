@@ -79,3 +79,8 @@ LinkedList.prototype.getLast = () => {
     }
     return lastNode
 }
+
+// This method returns the first node of the linked list.
+LinkedList.prototype.getFirst = () => {
+    return this.head;
+}
