@@ -54,7 +54,7 @@ let list = new LinkedList(node1)
 console.log(list.head.next.data) //returns 5
 
 // This method returns the number of nodes present in the linked list.
-    LinkedList.prototype.size = () => {
+LinkedList.prototype.size = () => {
     let count = 0;
     let node = this.head;
     while (node) {
@@ -65,7 +65,17 @@ console.log(list.head.next.data) //returns 5
 }
 
 // This method empties out the list.
+LinkedList.prototype.clear = () => {
+    this.head = null;
+}
 
-    LinkedList.prototype.clear = () => {
-        this.head = null;
+// This method returns the last node of the linked list.
+LinkedList.prototype.getLast = () => {
+    let lastNode = this.head;
+    if (lastNode) {
+        while (lastNode.next) {
+            lastNode = lastNode.next
+        }
     }
+    return lastNode
+}
