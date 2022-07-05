@@ -16,6 +16,13 @@ class Magazine extends Book {
         super(title, author, year);
         this.month = month;
     }
-} 
+}
+
+//can add function using prototype 
+Magazine.prototype.getSum = function () {
+    return `${this.title} was written by ${this.author}`
+}
 const Mag1 = new Magazine('Mag one', 'Jane Doe', '2021', 'Jan');
-console.log(Mag1.getSummary());
+
+console.log('by new fun using prototype:',Mag1.getSum());
+console.log('by extending:', Mag1.getSummary());
