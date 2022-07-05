@@ -7,8 +7,8 @@ class Stack {
         return this.items.push(element)
     }
 
-    pop() {
-        return this.items.s()
+    shift() {
+        return this.items.shift()
     }
 
     printStack() {
@@ -24,5 +24,5 @@ stack.push(1)
 stack.push(2)
 stack.push(3)
 stack.printStack()
-stack.pop()
+stack.shift()
 stack.printStack()
