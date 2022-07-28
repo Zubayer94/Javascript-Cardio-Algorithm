@@ -16,6 +16,18 @@
  */
 
 function reverse(llist) {
+    // 1. Initialize three pointers prev as NULL, curr as head and next as NULL.
+    // 2. Iterate through the linked list. In loop, do following.
+        // // Before changing next of current,
+        // // store next node
+        // next = curr->next
+        // // Now change next of current
+        // // This is where actual reversing happens
+        // curr->next = prev
+        // // Move prev and curr one step forward
+        // prev = curr
+        // curr = next
+        
     let current = llist;
     let prev = null;
     let next = null;
