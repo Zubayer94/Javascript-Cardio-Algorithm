@@ -85,4 +85,10 @@ let speed = null;
 let ride = {
     speed: speed !== null && speed !== void 0 ? speed : 30
 };
+let phone = document.getElementById('phone');
+function testRender(document) {
+    if (typeof document == 'string') {
+        document.toUpperCase();
+    }
+}
 //# sourceMappingURL=index.js.map

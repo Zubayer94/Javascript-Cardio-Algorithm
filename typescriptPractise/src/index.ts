@@ -157,16 +157,26 @@ let ride = {
     speed: speed ?? 30 // this is better way
 }
 
+/* *** Type Assertions */
+let phone = <HTMLInputElement> document.getElementById('phone')
+// HTMLElement
+// HTMLInputElement
+// phone.value
 
-
- 
-
-
-
-
-
-
-
+/* The any type */
+// using the unknown type is preferd  to using the any type
+function testRender(document: unknown) {
+    // if we use unknown type instead of any type, then we need to type Narrowing
+    if (typeof document == 'string' ) {
+        document.toUpperCase();
+    }
+    // if we have custom object created with classes the we need to use instanceof
+    // if ( document instanceof wordDocument ) {
+    //     document.toUpperCase();
+    // }
+    // document.move();
+    // document.fly();
+}
 
 
 
