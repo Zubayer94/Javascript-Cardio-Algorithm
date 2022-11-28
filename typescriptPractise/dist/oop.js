@@ -1,18 +1,28 @@
 "use strict";
 class Account {
-    constructor(id, owner, balance) {
+    constructor(id, owner, _balance) {
         this.id = id;
         this.owner = owner;
-        this.balance = balance;
+        this._balance = _balance;
     }
     deposit(amount) {
         if (amount <= 0)
             throw new Error("Invalid amount");
-        this.balance += amount;
+        this._balance += amount;
+    }
+    get balance() {
+        return this._balance;
+    }
+    set balance(value) {
+        if (value < 0)
+            throw new Error("Invalid value");
+        this._balance = value;
     }
 }
 let account = new Account(1, 'Zubayer', 0);
 account.deposit(100);
+console.log(account.deposit);
+account.balance = 1;
 console.log(typeof account);
 console.log(account instanceof Account);
 //# sourceMappingURL=oop.js.map
