@@ -15,9 +15,10 @@ class Account {
         this._balance += amount   
     }
 
-    private calculateTax() {
+    // private method
+    // private calculateTax() {
 
-    }
+    // }
 
     get balance(): number {
         return this._balance
