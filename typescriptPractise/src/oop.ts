@@ -36,5 +36,13 @@ account.balance = 1
 console.log(typeof account);
 console.log(account instanceof Account);
 
-
-
+/* index signature */
+class SeatAssignment {
+    // A1, A2, ...
+    // John, Zubayer
+    [seatNumber: string]: string
+}
+let seats = new SeatAssignment();
+seats.A1 = 'Zubayer'
+seats.A2 = 'John'
+seats['A3'] = 'Mosh'

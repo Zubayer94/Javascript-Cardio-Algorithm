@@ -25,4 +25,10 @@ console.log(account.deposit);
 account.balance = 1;
 console.log(typeof account);
 console.log(account instanceof Account);
+class SeatAssignment {
+}
+let seats = new SeatAssignment();
+seats.A1 = 'Zubayer';
+seats.A2 = 'John';
+seats['A3'] = 'Mosh';
 //# sourceMappingURL=oop.js.map
