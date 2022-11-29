@@ -46,3 +46,8 @@ let seats = new SeatAssignment();
 seats.A1 = 'Zubayer'
 seats.A2 = 'John'
 seats['A3'] = 'Mosh'
+
+/* static members */
+class Ride {
+    
+}
