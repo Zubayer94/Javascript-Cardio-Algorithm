@@ -20,6 +20,7 @@ class Account {
     }
 }
 let account = new Account(1, 'Zubayer', 0);
+console.log(account.balance);
 account.deposit(100);
 console.log(account.deposit);
 account.balance = 1;
@@ -44,4 +45,45 @@ ride1.start();
 let ride2 = new Ride();
 ride2.start();
 console.log('activeRides', Ride.activeRides);
+class Person {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    get fullName() {
+        return this.firstName + '' + this.lastName;
+    }
+    walk() {
+        console.log('walking');
+    }
+}
+class Student extends Person {
+    constructor(studentId, firstName, lastName) {
+        super(firstName, lastName);
+        this.studentId = studentId;
+    }
+    takeTest() {
+        console.log('taking test');
+    }
+}
+const student = new Student(1, 'John', 'Doe');
+student.fullName;
+student.walk;
+student.takeTest;
+class Teacher extends Person {
+    get fullName() {
+        return 'Professor' + super.fullName;
+    }
+}
+const teacher = new Teacher('John', 'Wick');
+teacher.fullName;
+printNames([
+    new Student(1, 'John', 'Smith'),
+    new Teacher('Mosh', 'Hamadani')
+]);
+function printNames(people) {
+    for (const person of people) {
+        console.log(person.fullName);
+    }
+}
 //# sourceMappingURL=oop.js.map
