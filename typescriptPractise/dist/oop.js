@@ -20,6 +20,7 @@ class Account {
     }
 }
 let account = new Account(1, 'Zubayer', 0);
+console.log(account.balance);
 account.deposit(100);
 console.log(account.deposit);
 account.balance = 1;
@@ -65,6 +66,7 @@ class Student extends Person {
         console.log('taking test');
     }
 }
+<<<<<<< HEAD
 let student = new Student(1, 'John', 'Doe');
 student.takeTest;
 student.walk;
@@ -75,4 +77,26 @@ class Teacher extends Person {
 }
 let teacher = new Teacher('John', 'Smith');
 console.log(teacher.fullName);
+=======
+const student = new Student(1, 'John', 'Doe');
+student.fullName;
+student.walk;
+student.takeTest;
+class Teacher extends Person {
+    get fullName() {
+        return 'Professor' + super.fullName;
+    }
+}
+const teacher = new Teacher('John', 'Wick');
+teacher.fullName;
+printNames([
+    new Student(1, 'John', 'Smith'),
+    new Teacher('Mosh', 'Hamadani')
+]);
+function printNames(people) {
+    for (const person of people) {
+        console.log(person.fullName);
+    }
+}
+>>>>>>> 138a1b1... added Polymorphism & private vs protected members
 //# sourceMappingURL=oop.js.map

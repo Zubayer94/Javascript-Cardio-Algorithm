@@ -82,7 +82,7 @@ class Person {
         return this.firstName + '' + this.lastName ;
     }
 
-    walk() {
+    protected walk() {
         console.log('walking'); 
     }
 }
@@ -99,7 +99,7 @@ class Student extends Person {
 }
 let student = new Student(1, 'John', 'Doe')
 student.takeTest
-student.walk
+// student.walk  // can't do this as it is protected and only accessible within class 'Person' and its subclasses.
 
 class Teacher extends Person {
     override get fullName() {
@@ -110,4 +110,28 @@ class Teacher extends Person {
 let teacher = new Teacher('John', 'Smith') // Teacher have no constructor, using parent constructor
 console.log(teacher.fullName);
 
+class Principal extends Person {
+    override get fullName() {
+        return 'Principal' + super.fullName
+    }
+}
+
+/* Polymorphism */
+printNames([
+    new Student(1, 'John', 'Smith'),
+    new Teacher('Mosh', 'Hamadani'),
+    new Principal('Mary', 'Smith')
+])
+
+function printNames(people: Person[]) {
+    for (const person of people) {
+        console.log(person.fullName);
+    }
+}
+
+/* private vs protected members */
+// private members are not inherited but protected members does
+// shouldn't use protected often or unless if you really know what you are doing because they can create coupling in applications. Stick to public and private
+
+/* Abstract Classes and members */
 
