@@ -153,3 +153,41 @@ class Circle extends Shape {
 
 // can't create instance of an abstract class, another class has to extend it
 // let shape = new Shape('red')
+
+/* Interface */
+// to define the shape of an object
+
+
+// abstract class Calander {
+//     constructor(public name: string) {}
+
+//     abstract addEvent(): void;
+//     abstract removeEvent(): void;
+// }
+
+// only have the signature of a object that would help type checking
+// abstract class or interface?
+// Calander class is not providing any logic or any algorithm that subclasses can reuse. we just have some method declarations. In this case its better to use interface. Our code will end up with more concise and shorter on both typescript and js. Else if we had any logic or any algorithm that subclasses can reuse then we couldn't use interface. Because in interface can't have method implementations, only have method declaration.
+
+interface ICalander {
+    name: string;
+    addEvent(): void; // only have method declarations no body part
+    removeEvent(): void;
+}
+
+// like class interface can extend another class
+interface ICloudCalander extends ICalander {
+    sync(): void;
+}
+
+class GoogleCalander implements ICalander {
+    constructor(public name: string) {}
+    
+    addEvent(): void {
+        throw new Error("Method not implemented.");
+    }
+    removeEvent(): void {
+        throw new Error("Method not implemented.");
+    }
+
+}
