@@ -145,4 +145,22 @@ function printNames(people: Person[]) {
 // shouldn't use protected often or unless if you really know what you are doing because they can create coupling in applications. Stick to public and private
 
 /* Abstract Classes and members */
+abstract class Shape {
+    constructor(public color: string) {}
 
+    // abstract method call only appear on abstact class
+    abstract render(): void;
+}
+
+class Circle extends Shape {
+    constructor(public radious: number, color: string) {
+        super(color)
+    }
+
+    override render(): void {
+        console.log('Rendering a circle');
+    }
+}
+
+// can't create instance of an abstract class, another class has to extend it
+// let shape = new Shape('red')
