@@ -53,6 +53,7 @@ console.log(account instanceof Account);
 class SeatAssignment {
     // A1, A2, ...
     // John, Zubayer
+    // by index signature create property dynamically
     [seatNumber: string]: string
 }
 let seats = new SeatAssignment();
@@ -100,11 +101,26 @@ class Person {
 }
 
 class Student extends Person {
-    constructor(public studentId: number, firstName: string, lastName: string) {
+    constructor(public studentId: number, firstName: string, lastName: string){
         super(firstName, lastName)
     }
 
-    takeTest() {
-        console.log('taking test'); 
+    takeTest(){
+        console.log('taking test');
+        
     }
 }
+let student = new Student(1, 'John', 'Doe')
+student.takeTest
+student.walk
+
+class Teacher extends Person {
+    override get fullName() {
+        return 'Professor ' + super.fullName ;
+    }
+}
+
+let teacher = new Teacher('John', 'Smith') // Teacher have no constructor, using parent constructor
+console.log(teacher.fullName);
+
+

@@ -44,4 +44,35 @@ ride1.start();
 let ride2 = new Ride();
 ride2.start();
 console.log('activeRides', Ride.activeRides);
+class Person {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    get fullName() {
+        return this.firstName + '' + this.lastName;
+    }
+    walk() {
+        console.log('walking');
+    }
+}
+class Student extends Person {
+    constructor(studentId, firstName, lastName) {
+        super(firstName, lastName);
+        this.studentId = studentId;
+    }
+    takeTest() {
+        console.log('taking test');
+    }
+}
+let student = new Student(1, 'John', 'Doe');
+student.takeTest;
+student.walk;
+class Teacher extends Person {
+    get fullName() {
+        return 'Professor ' + super.fullName;
+    }
+}
+let teacher = new Teacher('John', 'Smith');
+console.log(teacher.fullName);
 //# sourceMappingURL=oop.js.map
