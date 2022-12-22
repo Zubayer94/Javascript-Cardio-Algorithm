@@ -25,9 +25,22 @@ class Account {
             throw new Error("Invalid value");
         this._balance = value
     }
+
+    // private method
+    // private calculateTax() {
+
+    // }
+
+    // set balance(value: number) {
+    //     if(value < 0)
+    //         throw new Error("Invalid value");
+    //     this._balance = value
+    // }
 }
 
 let account = new Account(1, 'Zubayer', 0)
+console.log(account.balance);
+// account.balance = 1
 
 account.deposit(100)
 console.log(account.deposit);
