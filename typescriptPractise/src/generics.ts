@@ -66,3 +66,33 @@ interface Product {
 let result = fetch<Product>('url')
 result.data?.title
 
+/* Generic Constraints */
+/* to constraint/limit the type or shape of an object */
+
+// constraint by type
+// function echo<T extends number | string>(value:T): T {
+//     return value
+// }
+
+// constraint by interface
+// interface Person {
+//     name: string
+// }
+// function echo<T extends Person>(value:T): T {
+//     return value
+// }
+
+// constraint by class
+class Car{
+    constructor(public name: string) {}
+}
+
+class BMW extends Car {}
+
+function echo<T extends Car>(value:T): T {
+    return value
+}
+
+echo(new Car('BMW x29'))
+
+
