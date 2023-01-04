@@ -51,3 +51,18 @@ interface Result<T> {
 function fetch<T>(url: string): Result<T> {
     return {data: null, error: null}
 }
+
+interface User {
+    username: string
+}
+
+interface Product {
+    title: string
+}
+
+// let result = fetch<User>('url')
+// result.data?.username
+/* or */
+let result = fetch<Product>('url')
+result.data?.title
+
