@@ -42,7 +42,6 @@ let number = ArrayUtils.wrapArray(1)
 // }
 
 /* Generic Interfaces */
-
 interface Result<T> {
     data: T | null,
     error: string | null
@@ -102,13 +101,13 @@ interface Product {
 }
 
 class Store <T>{
-    private _object: T[] = [];
+    protected _object: T[] = [];
     add(obj: T): void {
         this._object.push(obj)
     }
 }
 
-// Pass on the generic type parameter
+// Pass on the generic type parameter. The generic type parameter that we have in base class is also gonna be use in child class
 class CompressibleStore<T> extends Store<T> {
     compress() {}
 }
@@ -116,5 +115,18 @@ class CompressibleStore<T> extends Store<T> {
 let store = new CompressibleStore<Product>()
 store.compress()
 
+// restricting geniric type parameter
+class SearchableStore<T extends {name: string} > extends Store<T> {
+    find(name: string): T | undefined {
+        return this._object.find(obj => obj.name === name)
+    } 
+}
+
+// Fix/terminate the generic type parameter 
+class ProductStore extends Store<Product> {
+    filterByCategory(category: string): Product[] {
+        return [];
+    }
+}
 
 
